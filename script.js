@@ -3,7 +3,7 @@ let storyAudio = null;
 function playStoryVoice() {
   stopVoice();
 
-  storyAudio = new Audio("story.mp3");
+  storyAudio = new Audio("Story.mp4..m4a");
   storyAudio.volume = 0.9;
 
   storyAudio.play().catch(() => {
