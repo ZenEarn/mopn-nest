@@ -79,11 +79,11 @@ function startBreathing() {
 function playStoryVoice() {
   stopVoice();
 
-  storyAudio = new Audio("story.mp4a");
+  storyAudio = new Audio("Story.mp4a");
   storyAudio.volume = 0.9;
 
   storyAudio.play().catch(() => {
-    alert("Upload story.mp4a to this same GitHub repo to use real voice.");
+    alert("Upload Story.mp4a to this same GitHub repo to use real voice.");
   });
 }
 
