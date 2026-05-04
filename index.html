@@ -1,145 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+lMoon Nest
 
-  <title>Moon Nest</title>
+A calm bedtime routine app for little dreamers.
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+Start Bedtime  Calm Breathing  Sleep Story Sleep Sounds  My Stars
+←
+Bedtime Routine
 
-  <meta name="theme-color" content="#20134f" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="Moon Nest" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-</head>
+Tap each step when it is done.
 
-<body>
-  <div class="sky">
-    <span class="star star-one">✦</span>
-    <span class="star star-two">✧</span>
-    <span class="star star-three">✦</span>
-    <span class="star star-four">✧</span>
-  </div>
+ Brush teeth   Put on pyjamas   Pack school bag  Toilet   Get into bed
+Finish Bedtime
+←
+Calm Breathing
 
-  <main class="phone-shell">
+Follow the moon. Breathe in slowly, then breathe out softly.
 
-    <section id="home" class="screen active">
-      <div class="hero">
-        <<div class="logo-card">
-  <div class="big-moon"></div>
-  <div class="sleepy-puppy">🐶</div>
-  <div class="cloud cloud-one"></div>
-  <div class="cloud cloud-two"></div>
-  </div>
+Ready?
 
-  <h1>Moon Nest</h1>
-  <p>A calming bedtime routine app for kids.</p>
+Start Breathing
+←
+Sleep Story
 
-      <div class="menu">
-        <button onclick="openScreen('routine')">Start Bedtime</button>
-        <button onclick="openScreen('breathing')">Calm Breathing</button>
-        <button onclick="openScreen('story')">Sleep Story</button>
-        <button onclick="openScreen('sounds')">Sleep Sounds</button>
-        <button onclick="openScreen('rewards')">My Stars</button>
-      </div>
-    </section>
+Luna and the Sleepy Moon
 
-    <section id="routine" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Bedtime Routine</h2>
-      </header>
+Luna the little puppy curled up inside her soft moon nest.
 
-      <p class="page-text">Tap each step when it is done. Luna will help you get ready for sleep.</p>
+The sky was quiet, the stars were glowing, and the clouds floated gently around her.
 
-      <div class="routine-list">
-        <label><input type="checkbox" onchange="saveRoutine()"> Brush teeth</label>
-        <label><input type="checkbox" onchange="saveRoutine()"> Put on pyjamas</label>
-        <label><input type="checkbox" onchange="saveRoutine()"> Pack school bag</label>
-        <label><input type="checkbox" onchange="saveRoutine()"> Toilet</label>
-        <label><input type="checkbox" onchange="saveRoutine()"> Get into bed</label>
-      </div>
+“It is time to rest,” whispered the sleepy moon.
 
-      <button class="primary" onclick="finishRoutine()">Finish Bedtime</button>
-    </section>
+Luna took a slow breath in… and a soft breath out.
 
-    <section id="breathing" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Calm Breathing</h2>
-      </header>
+Her blanket felt warm. Her paws felt cosy. Her eyes began to feel heavy.
 
-      <p class="page-text">Follow Bree the Butterfly. Breathe in slowly and breathe out softly.</p>
+The moon smiled softly and whispered, “You are safe. You are loved. You did a wonderful job today.”
 
-      <div class="breathing-card">
-        <div id="butterfly" class="butterfly">🦋</div>
-        <h3 id="breathText">Ready?</h3>
-      </div>
+Luna snuggled deeper into her moon nest and drifted into a peaceful dream.
 
-      <button class="primary" onclick="startBreathing()">Start Breathing</button>
-    </section>
+Play Voice  Stop Voice
+←
+Sleep Sounds
 
-    <section id="story" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Sleep Story</h2>
-      </header>
+Upload real MP3 sounds later. The app is ready for them.
 
-      <article class="story-card">
-        <h3>Luna the Puppy and the Moon Nest</h3>
+Rain  Ocean  Forest  Music
+Stop Sound
+←
+My Stars
 
-        <p>Luna the puppy looked up at the big glowing moon. “It is time to rest,” whispered Bree the Butterfly.</p>
+You have earned
 
-        <p>Luna climbed into her soft moon nest, tucked her paws under the blanket, and listened to the stars twinkle above.</p>
+0 ⭐
+Complete bedtime steps to collect stars.
 
-        <p>Bree fluttered slowly in the sky. “Breathe in slowly… and breathe out softly…”</p>
-
-        <p>Luna’s eyes grew heavy. The clouds became pillows, the stars became night lights, and the moon smiled gently.</p>
-
-        <p>“You are safe. You are loved. It is time to dream.” And Luna drifted into a peaceful sleep.</p>
-      </article>
-
-      <button class="primary" onclick="playStoryVoice()">Play Soft Voice</button>
-      <button class="secondary" onclick="stopVoice()">Stop Voice</button>
-    </section>
-
-    <section id="sounds" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Sleep Sounds</h2>
-      </header>
-
-      <p class="page-text">Choose a soft sound. Add real MP3 files into the sounds folder later.</p>
-
-      <div class="sound-grid">
-        <button onclick="playSound('rain')">Rain 🌧️</button>
-        <button onclick="playSound('ocean')">Ocean 🌊</button>
-        <button onclick="playSound('forest')">Forest 🌲</button>
-        <button onclick="playSound('music')">Music 🎵</button>
-      </div>
-
-      <button class="secondary" onclick="stopSound()">Stop Sound</button>
-    </section>
-
-    <section id="rewards" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>My Stars</h2>
-      </header>
-
-      <div class="reward-card">
-        <p>You have earned</p>
-        <div id="starNumber" class="star-number">0 ⭐</div>
-        <p>Complete bedtime steps to grow your Moon Nest.</p>
-      </div>
-
-      <button class="primary" onclick="resetStars()">Reset Stars</button>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+Reset Stars
