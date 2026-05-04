@@ -79,7 +79,7 @@ function startBreathing() {
 function playSound(soundName) {
   stopSound();
 
-  const filePath = soundName + ".mp3";
+  const filePath = soundName + ".m4a";
   currentAudio = new Audio(filePath);
   currentAudio.loop = true;
   currentAudio.volume = 0.45;
