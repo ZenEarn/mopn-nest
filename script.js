@@ -100,7 +100,7 @@ function stopVoice() {
 function playSound(soundName) {
   stopSound();
 
-  const filePath = "sounds/" + soundName + ".m4a";
+  const filePath = soundName + ".m4a";
   currentAudio = new Audio(filePath);
   currentAudio.loop = true;
   currentAudio.volume = 0.45;
