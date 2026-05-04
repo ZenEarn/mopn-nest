@@ -79,7 +79,7 @@ function startBreathing() {
 function playStoryVoice() {
   stopVoice();
 
-  storyAudio = new Audio("story.mp3");
+  storyAudio = new Audio("story.mp4a");
   storyAudio.volume = 0.9;
 
   storyAudio.play().catch(() => {
