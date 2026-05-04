@@ -1,11 +1,11 @@
 {
   "name": "Moon Nest",
   "short_name": "Moon Nest",
-  "description": "A magical bedtime routine app for children.",
+  "description": "A calm bedtime routine app for little dreamers.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#20134f",
-  "theme_color": "#20134f",
+  "background_color": "#140f35",
+  "theme_color": "#140f35",
   "orientation": "portrait",
   "icons": []
 }
