@@ -83,7 +83,7 @@ function playStoryVoice() {
   storyAudio.volume = 0.9;
 
   storyAudio.play().catch(() => {
-    alert("Upload story.mp3 to this same GitHub repo to use real voice.");
+    alert("Upload story.mp4a to this same GitHub repo to use real voice.");
   });
 }
 
