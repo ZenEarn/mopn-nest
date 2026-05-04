@@ -76,14 +76,16 @@ function startBreathing() {
   }, 9000);
 }
 
-function playStoryVoice() {
-  stopVoice();
+function playSound(soundName) {
+  stopSound();
 
-  storyAudio = new Audio("Story.mp4a");
-  storyAudio.volume = 0.9;
+  const filePath = soundName + ".mp3";
+  currentAudio = new Audio(filePath);
+  currentAudio.loop = true;
+  currentAudio.volume = 0.45;
 
-  storyAudio.play().catch(() => {
-    alert("Upload Story.mp4a to this same GitHub repo to use real voice.");
+  currentAudio.play().catch(() => {
+    alert("Missing sound file: " + filePath);
   });
 }
 
