@@ -233,4 +233,10 @@ input[type="checkbox"] {
     margin: 9px 0;
     font-size: 16px;
   }
+}.story-video {
+  width: 100%;
+  margin-top: 22px;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  background: #000;
 }
