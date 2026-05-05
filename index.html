@@ -68,27 +68,19 @@
       <button onclick="startBreathing()">Start Breathing</button>
     </section>
 
-    <section id="story" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Sleep Story</h2>
-      </header>
+    <<section id="story" class="screen">
+  <header>
+    <button class="back" onclick="openScreen('home')">←</button>
+    <h2>Sleep Story</h2>
+  </header>
 
-      <article class="story-card">
-        <h3>Luna and the Sleepy Moon</h3>
+  <p class="page-text">Watch Luna’s calming bedtime story.</p>
 
-        <p>Luna the little puppy curled up inside her soft moon nest.</p>
-        <p>The sky was quiet, the stars were glowing, and the clouds floated gently around her.</p>
-        <p>“It is time to rest,” whispered the sleepy moon.</p>
-        <p>Luna took a slow breath in… and a soft breath out.</p>
-        <p>Her blanket felt warm. Her paws felt cosy. Her eyes began to feel heavy.</p>
-        <p>The moon smiled softly and whispered, “You are safe. You are loved. You did a wonderful job today.”</p>
-        <p>Luna snuggled deeper into her moon nest and drifted into a peaceful dream.</p>
-      </article>
-
-      <button onclick="playStoryVoice()">Play Voice</button>
-      <button class="secondary" onclick="stopVoice()">Stop Voice</button>
-    </section>
+  <video class="story-video" controls playsinline>
+    <source src="story.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</section>
 
     <section id="sounds" class="screen">
       <header>
