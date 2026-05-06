@@ -24,15 +24,14 @@
       <h1>Moon Nest</h1>
       <p class="subtitle">A calm bedtime routine app for little dreamers.</p>
 
-      <div class="menu">
+      <<div class="menu">
         <button onclick="openScreen('routine')">Start Bedtime</button>
         <button onclick="openScreen('breathing')">Calm Breathing</button>
         <button onclick="openScreen('story')">Sleep Story</button>
         <button onclick="openScreen('sounds')">Sleep Sounds</button>
         <button onclick="openScreen('rewards')">My Stars</button>
-      </div>
-    </section>
-
+        <button onclick="openScreen('parent')">Parent Info</button>
+      /<div> 
     <section id="routine" class="screen">
       <header>
         <button class="back" onclick="openScreen('home')">←</button>
@@ -113,7 +112,24 @@
 
       <button onclick="resetStars()">Reset Stars</button>
     </section>
+<section id="parent" class="screen">
+  <header>
+    <button class="back" onclick="openScreen('home')">←</button>
+    <h2>Parent Info</h2>
+  </header>
 
+  <div class="story-card">
+    <h3>About Moon Nest</h3>
+
+    <p>Moon Nest is a calming bedtime routine app designed to help children slow down, feel safe, and prepare for sleep.</p>
+
+    <p>Luna is the sleepy puppy who guides children through bedtime with a routine checklist, calming breathing, gentle sounds, and a relaxing sleep story.</p>
+
+    <p>This app is designed as a quiet bedtime helper. It does not need child accounts, messages, location, or personal details.</p>
+
+    <p>For best results, use Moon Nest as part of a calm bedtime routine with low screen brightness and gentle volume.</p>
+  </div>
+</section>
   </main>
 
   <script src="script.js"></script>
