@@ -9,12 +9,18 @@ function openScreen(screenId) {
     screen.classList.remove("active");
   });
 
-  document.getElementById(screenId).classList.add("active");
+  const screen = document.getElementById(screenId);
+
+  if (screen) {
+    screen.classList.add("active");
+  }
+
   updateStars();
 }
 
 function saveRoutine() {
   const checkedBoxes = document.querySelectorAll("#routine input:checked").length;
+
   localStorage.setItem("moonNestStars", checkedBoxes);
   updateStars();
 }
@@ -27,7 +33,7 @@ function finishRoutine() {
     return;
   }
 
-  localStorage.setItem("moonNestStars", "5");
+  localStorage.setItem("moonNestStars", checkedBoxes);
   updateStars();
   openScreen("rewards");
 }
@@ -59,6 +65,10 @@ function startBreathing() {
   const circle = document.getElementById("breathCircle");
   const text = document.getElementById("breathText");
 
+  if (!circle || !text) {
+    return;
+  }
+
   text.textContent = "Breathe in...";
   circle.classList.add("big");
 
@@ -79,28 +89,8 @@ function startBreathing() {
 function playSound(soundName) {
   stopSound();
 
-  const filePath = soundName + ".m4a";
-  currentAudio = new Audio(filePath);
-  currentAudio.loop = true;
-  currentAudio.volume = 0.45;
+  const filePath = soundName;
 
-  currentAudio.play().catch(() => {
-    alert("Missing sound file: " + filePath);
-  });
-}
-
-function stopVoice() {
-  if (storyAudio) {
-    storyAudio.pause();
-    storyAudio.currentTime = 0;
-    storyAudio = null;
-  }
-}
-
-function playSound(soundName) {
-  stopSound();
-
-const filePath = soundName;
   currentAudio = new Audio(filePath);
   currentAudio.loop = true;
   currentAudio.volume = 0.45;
@@ -115,10 +105,30 @@ function stopSound() {
     currentAudio.pause();
     currentAudio.currentTime = 0;
     currentAudio = null;
-  }function setSoundTimer(minutes) {
+  }
+
+  if (window.soundTimer) {
+    clearTimeout(window.soundTimer);
+    window.soundTimer = null;
+  }
+
   const timerStatus = document.getElementById("timerStatus");
 
+  if (timerStatus) {
+    timerStatus.textContent = "Sound stopped.";
+  }
+}
+
+function setSoundTimer(minutes) {
+  const timerStatus = document.getElementById("timerStatus");
+
+  if (!timerStatus) {
+    alert("Timer status line is missing in index.html.");
+    return;
+  }
+
   if (!currentAudio) {
+    timerStatus.textContent = "Choose a sound first.";
     alert("Choose a sound first.");
     return;
   }
@@ -133,7 +143,6 @@ function stopSound() {
     stopSound();
     timerStatus.textContent = "Sound stopped.";
   }, minutes * 60 * 1000);
-}
 }
 
 updateStars();
