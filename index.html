@@ -31,6 +31,7 @@
         <button onclick="openScreen('sounds')">Sleep Sounds</button>
         <button onclick="openScreen('rewards')">My Stars</button>
         <button onclick="openScreen('parent')">Parent Info</button>
+        <button onclick="openScreen('legal')">Privacy & Terms</button>
       </div>
     </section>
 
@@ -104,35 +105,34 @@
       </video>
     </section>
 
-<section id="sounds" class="screen">
-  <header>
-    <button class="back" onclick="openScreen('home')">←</button>
-    <h2>Sleep Sounds</h2>
-  </header>
+    <section id="sounds" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Sleep Sounds</h2>
+      </header>
 
-  <p class="page-text">
-    Choose a calming sound to help your child settle at bedtime.
-  </p>
+      <p class="page-text">
+        Choose a calming sound to help your child settle at bedtime.
+      </p>
 
-  <div class="sound-grid">
-    <button onclick="playSound('forest.m4a')">Forest</button>
-    <button onclick="playSound('rainforest.m4a')">Rainforest</button>
-    <button onclick="playSound('Ocean.m4a')">Ocean</button>
-    <button onclick="playSound('music.m4a')">Music</button>
-  </div>
+      <div class="sound-grid">
+        <button onclick="playSound('forest.m4a')">Forest</button>
+        <button onclick="playSound('rainforest.m4a')">Rainforest</button>
+        <button onclick="playSound('Ocean.m4a')">Ocean</button>
+        <button onclick="playSound('music.m4a')">Music</button>
+      </div>
 
-  <p class="page-text">Sleep timer</p>
+      <p class="page-text">Sleep timer</p>
 
-  <div class="sound-grid">
-    <button onclick="setSoundTimer(15)">15 min</button>
-    <button onclick="setSoundTimer(30)">30 min</button>
-    <button onclick="setSoundTimer(60)">60 min</button>
-    <button class="secondary" onclick="stopSound()">Stop</button>
-  </div>
+      <div class="sound-grid">
+        <button onclick="setSoundTimer(15)">15 min</button>
+        <button onclick="setSoundTimer(30)">30 min</button>
+        <button onclick="setSoundTimer(60)">60 min</button>
+        <button class="secondary" onclick="stopSound()">Stop</button>
+      </div>
 
- <p id="timerStatus" class="page-text"></p>
-</section>
-</section>
+      <p id="timerStatus" class="page-text"></p>
+    </section>
 
     <section id="rewards" class="screen">
       <header>
@@ -177,6 +177,59 @@
         <p>
           For best results, use Moon Nest as part of a calm bedtime routine with
           low screen brightness and gentle volume.
+        </p>
+      </div>
+    </section>
+
+    <section id="legal" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Privacy & Terms</h2>
+      </header>
+
+      <div class="story-card">
+        <h3>Privacy Policy</h3>
+
+        <p>
+          Moon Nest is designed as a calm bedtime helper for children and families.
+          The app does not require child accounts, names, emails, messages,
+          location, photos, or personal details.
+        </p>
+
+        <p>
+          Moon Nest stores bedtime stars only on the device using local storage.
+          This helps the app remember progress without sending information to us.
+        </p>
+
+        <p>
+          The app uses audio, video, and images only to provide bedtime routines,
+          calming sounds, and Luna’s sleep story.
+        </p>
+
+        <p>
+          Parents and carers should use Moon Nest with low volume, low screen
+          brightness, and as part of a calm bedtime routine.
+        </p>
+
+        <h3>Terms of Use</h3>
+
+        <p>
+          Moon Nest is a general bedtime routine and relaxation app. It is not
+          medical advice, sleep therapy, or a health service.
+        </p>
+
+        <p>
+          Parents and carers are responsible for deciding whether Moon Nest is
+          suitable for their child.
+        </p>
+
+        <p>
+          All Moon Nest content, including Luna, app design, stories, images,
+          sounds, and videos, belongs to Moon Nest unless otherwise stated.
+        </p>
+
+        <p>
+          Contact: support@example.com
         </p>
       </div>
     </section>
