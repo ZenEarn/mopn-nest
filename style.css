@@ -23,7 +23,7 @@ body {
   max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 16px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +32,8 @@ body {
 .screen {
   display: none;
   width: 100%;
-  padding: 22px;
-  border-radius: 34px;
+  padding: 20px;
+  border-radius: 32px;
   background: rgba(255, 255, 255, 0.11);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 28px 75px rgba(0, 0, 0, 0.35);
@@ -44,20 +44,24 @@ body {
   display: block;
 }
 
+.home-screen {
+  text-align: center;
+}
+
 .hero-art {
   display: block;
   width: 100%;
-  max-width: 245px;
+  max-width: 190px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  margin: 0 auto 20px;
-  border-radius: 38px;
+  margin: 0 auto 14px;
+  border-radius: 34px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
   margin: 0;
-  font-size: 42px;
+  font-size: 38px;
   line-height: 1;
   text-align: center;
   font-weight: 900;
@@ -79,26 +83,57 @@ h3 {
 
 .subtitle,
 .page-text {
-  margin: 12px auto 0;
+  margin: 10px auto 0;
   max-width: 320px;
   text-align: center;
   color: #efe9ff;
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.45;
 }
 
-.menu {
-  margin-top: 24px;
+.journey-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.journey-title {
+  margin: 0 0 12px;
+  font-weight: 850;
+  color: #fff7bd;
+}
+
+.journey-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.journey-steps span {
+  padding: 9px 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+  background: rgba(255, 255, 255, 0.14);
+  color: #efe9ff;
+}
+
+.journey-steps span.done {
+  background: rgba(255, 247, 189, 0.95);
+  color: #211650;
 }
 
 button {
   width: 100%;
-  min-height: 54px;
-  margin: 10px 0;
-  padding: 13px 18px;
+  min-height: 52px;
+  margin: 9px 0;
+  padding: 13px 16px;
   border: none;
   border-radius: 18px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 850;
   color: #211650;
   background: linear-gradient(180deg, #fff7bd, #ffec86);
@@ -111,8 +146,71 @@ button:active {
   transform: scale(0.98);
 }
 
+.main-cta {
+  min-height: 58px;
+  font-size: 17px;
+  border-radius: 22px;
+}
+
 .secondary {
   background: rgba(255, 255, 255, 0.9);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.feature-card {
+  min-height: 100px;
+  margin: 0;
+  padding: 12px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.feature-card span {
+  display: block;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.feature-card strong {
+  display: block;
+  font-size: 15px;
+}
+
+.feature-card small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0.78;
+}
+
+.home-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 15px;
+  color: #efe9ff;
+}
+
+.home-links button {
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  color: #efe9ff;
+  background: transparent;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: underline;
 }
 
 header {
@@ -179,11 +277,19 @@ input[type="checkbox"] {
 }
 
 .story-card {
-  max-height: 420px;
+  max-height: 440px;
   overflow-y: auto;
   text-align: left;
   line-height: 1.58;
   font-size: 16px;
+}
+
+.story-video {
+  width: 100%;
+  margin-top: 22px;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  background: #000;
 }
 
 .sound-grid {
@@ -198,6 +304,11 @@ input[type="checkbox"] {
   margin: 0;
 }
 
+.timer-title {
+  color: #fff7bd;
+  font-weight: 850;
+}
+
 .reward-card {
   text-align: center;
 }
@@ -210,33 +321,31 @@ input[type="checkbox"] {
 
 @media (max-width: 390px) {
   .app {
-    padding: 12px;
+    padding: 10px;
     align-items: flex-start;
   }
 
   .screen {
-    padding: 18px;
-    border-radius: 30px;
+    padding: 16px;
+    border-radius: 28px;
   }
 
   .hero-art {
-    max-width: 215px;
-    border-radius: 34px;
+    max-width: 165px;
+    border-radius: 30px;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 34px;
+  }
+
+  .feature-card {
+    min-height: 92px;
   }
 
   button {
     min-height: 50px;
-    margin: 9px 0;
-    font-size: 16px;
+    margin: 8px 0;
+    font-size: 15.5px;
   }
-}.story-video {
-  width: 100%;
-  margin-top: 22px;
-  border-radius: 24px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-  background: #000;
 }
