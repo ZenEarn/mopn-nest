@@ -18,54 +18,37 @@
 <body>
   <main class="app">
 
-    <section id="home" class="screen active home-screen">
-      <img class="hero-art" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
+<section id="home" class="screen active home-screen">
+  <img class="hero-art" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
 
-      <h1>Moon Nest</h1>
-      <p class="subtitle">A magical bedtime journey with Luna.</p>
+  <h1>Moon Nest</h1>
+  <p class="subtitle">A calm bedtime journey with Luna.</p>
 
-      <div class="journey-card">
-        <p class="journey-title">Tonight’s bedtime journey</p>
+  <button class="main-cta" onclick="openScreen('routine')">
+    Start Bedtime
+  </button>
 
-        <div class="journey-steps">
-          <span id="stepRoutine">Routine</span>
-          <span id="stepBreathing">Breathing</span>
-          <span id="stepStory">Story</span>
-          <span id="stepSleep">Sleep</span>
-        </div>
+  <div class="feature-grid">
+    <button class="feature-card" onclick="openScreen('breathing')">
+      <span>🫧</span>
+      <strong>Breathing</strong>
+    </button>
 
-        <button class="main-cta" onclick="openScreen('routine')">
-          Start Tonight’s Bedtime
-        </button>
-      </div>
+    <button class="feature-card" onclick="openScreen('story')">
+      <span>📖</span>
+      <strong>Story</strong>
+    </button>
 
-      <div class="feature-grid">
-        <button class="feature-card" onclick="openScreen('breathing')">
-          <span>🫧</span>
-          <strong>Calm Breathing</strong>
-          <small>Slow down with Luna</small>
-        </button>
+    <button class="feature-card" onclick="openScreen('sounds')">
+      <span>🎵</span>
+      <strong>Sounds</strong>
+    </button>
 
-        <button class="feature-card" onclick="openScreen('story')">
-          <span>📖</span>
-          <strong>Sleep Story</strong>
-          <small>Watch Luna’s story</small>
-        </button>
-
-        <button class="feature-card" onclick="openScreen('sounds')">
-          <span>🎵</span>
-          <strong>Sleep Sounds</strong>
-          <small>Ocean, forest & music</small>
-        </button>
-
-        <button class="feature-card" onclick="openScreen('rewards')">
-          <span>⭐</span>
-          <strong>My Stars</strong>
-          <small>Bedtime rewards</small>
-        </button>
-      </div>
-
-      <  </div>
+    <button class="feature-card" onclick="openScreen('rewards')">
+      <span>⭐</span>
+      <strong>Stars</strong>
+    </button>
+  </div>
 
   <div class="home-links">
     <button onclick="openScreen('parent')">Parent Info</button>
