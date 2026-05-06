@@ -104,25 +104,34 @@
       </video>
     </section>
 
-    <section id="sounds" class="screen">
-      <header>
-        <button class="back" onclick="openScreen('home')">←</button>
-        <h2>Sleep Sounds</h2>
-      </header>
+<section id="sounds" class="screen">
+  <header>
+    <button class="back" onclick="openScreen('home')">←</button>
+    <h2>Sleep Sounds</h2>
+  </header>
 
-      <p class="page-text">
-        Choose a calming sound to help your child settle at bedtime.
-      </p>
+  <p class="page-text">
+    Choose a calming sound to help your child settle at bedtime.
+  </p>
 
-      <div class="sound-grid">
-        <button onclick="playSound('forest.m4a')">Forest</button>
-        <button onclick="playSound('rainforest.m4a')">Rainforest</button>
-        <button onclick="playSound('Ocean.m4a')">Ocean</button>
-        <button onclick="playSound('music.m4a')">Music</button>
-      </div>
+  <div class="sound-grid">
+    <button onclick="playSound('forest.m4a')">Forest</button>
+    <button onclick="playSound('rainforest.m4a')">Rainforest</button>
+    <button onclick="playSound('Ocean.m4a')">Ocean</button>
+    <button onclick="playSound('music.m4a')">Music</button>
+  </div>
 
-      <button class="secondary" onclick="stopSound()">Stop Sound</button>
-    </section>
+  <p class="page-text">Sleep timer</p>
+
+  <div class="sound-grid">
+    <button onclick="setSoundTimer(15)">15 min</button>
+    <button onclick="setSoundTimer(30)">30 min</button>
+    <button onclick="setSoundTimer(60)">60 min</button>
+    <button class="secondary" onclick="stopSound()">Stop</button>
+  </div>
+
+  <p id="timerStatus" class="page-text"></p>
+</section>
 
     <section id="rewards" class="screen">
       <header>
