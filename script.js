@@ -115,7 +115,25 @@ function stopSound() {
     currentAudio.pause();
     currentAudio.currentTime = 0;
     currentAudio = null;
+  }function setSoundTimer(minutes) {
+  const timerStatus = document.getElementById("timerStatus");
+
+  if (!currentAudio) {
+    alert("Choose a sound first.");
+    return;
   }
+
+  if (window.soundTimer) {
+    clearTimeout(window.soundTimer);
+  }
+
+  timerStatus.textContent = "Sound will stop in " + minutes + " minutes.";
+
+  window.soundTimer = setTimeout(() => {
+    stopSound();
+    timerStatus.textContent = "Sound stopped.";
+  }, minutes * 60 * 1000);
+}
 }
 
 updateStars();
