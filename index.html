@@ -24,14 +24,16 @@
       <h1>Moon Nest</h1>
       <p class="subtitle">A calm bedtime routine app for little dreamers.</p>
 
-     <div class="menu">
+      <div class="menu">
         <button onclick="openScreen('routine')">Start Bedtime</button>
         <button onclick="openScreen('breathing')">Calm Breathing</button>
         <button onclick="openScreen('story')">Sleep Story</button>
         <button onclick="openScreen('sounds')">Sleep Sounds</button>
         <button onclick="openScreen('rewards')">My Stars</button>
         <button onclick="openScreen('parent')">Parent Info</button>
-    </div>
+      </div>
+    </section>
+
     <section id="routine" class="screen">
       <header>
         <button class="back" onclick="openScreen('home')">←</button>
@@ -67,19 +69,19 @@
       <button onclick="startBreathing()">Start Breathing</button>
     </section>
 
- <section id="story" class="screen">
-  <header>
-    <button class="back" onclick="openScreen('home')">←</button>
-    <h2>Sleep Story</h2>
-  </header>
+    <section id="story" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Sleep Story</h2>
+      </header>
 
-  <p class="page-text">Watch Luna’s calming bedtime story.</p>
+      <p class="page-text">Watch Luna’s calming bedtime story.</p>
 
-  <video class="story-video" controls playsinline>
-    <source src="story.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
-</section>
+      <video class="story-video" controls playsinline>
+        <source src="story.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </section>
 
     <section id="sounds" class="screen">
       <header>
@@ -87,14 +89,15 @@
         <h2>Sleep Sounds</h2>
       </header>
 
-      <p class="page-text">Upload real MP3 sounds later. The app is ready for them.</p>
+      <p class="page-text">Choose a calming sound to help your child settle at bedtime.</p>
 
- </div>
-  <button onclick="playSound('forest.m4a')">Forest</button>
-  <button onclick="playSound('rainforest.m4a')">Rainforest</button>
-  <button onclick="playSound('Ocean.m4a')">Ocean</button>
-  <button onclick="playSound('music.m4a')">Music</button>
-</div>
+      <div class="sound-grid">
+        <button onclick="playSound('forest.m4a')">Forest</button>
+        <button onclick="playSound('rainforest.m4a')">Rainforest</button>
+        <button onclick="playSound('Ocean.m4a')">Ocean</button>
+        <button onclick="playSound('music.m4a')">Music</button>
+      </div>
+
       <button class="secondary" onclick="stopSound()">Stop Sound</button>
     </section>
 
@@ -112,24 +115,26 @@
 
       <button onclick="resetStars()">Reset Stars</button>
     </section>
-<section id="parent" class="screen">
-  <header>
-    <button class="back" onclick="openScreen('home')">←</button>
-    <h2>Parent Info</h2>
-  </header>
 
-  <div class="story-card">
-    <h3>About Moon Nest</h3>
+    <section id="parent" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Parent Info</h2>
+      </header>
 
-    <p>Moon Nest is a calming bedtime routine app designed to help children slow down, feel safe, and prepare for sleep.</p>
+      <div class="story-card">
+        <h3>About Moon Nest</h3>
 
-    <p>Luna is the sleepy puppy who guides children through bedtime with a routine checklist, calming breathing, gentle sounds, and a relaxing sleep story.</p>
+        <p>Moon Nest is a calming bedtime routine app designed to help children slow down, feel safe, and prepare for sleep.</p>
 
-    <p>This app is designed as a quiet bedtime helper. It does not need child accounts, messages, location, or personal details.</p>
+        <p>Luna is the sleepy puppy who guides children through bedtime with a routine checklist, calming breathing, gentle sounds, and a relaxing sleep story.</p>
 
-    <p>For best results, use Moon Nest as part of a calm bedtime routine with low screen brightness and gentle volume.</p>
-  </div>
-</section>
+        <p>This app is designed as a quiet bedtime helper. It does not need child accounts, messages, location, or personal details.</p>
+
+        <p>For best results, use Moon Nest as part of a calm bedtime routine with low screen brightness and gentle volume.</p>
+      </div>
+    </section>
+
   </main>
 
   <script src="script.js"></script>
