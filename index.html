@@ -18,15 +18,31 @@
 <body>
   <main class="app">
 
-<section id="home" class="screen active home-screen">
-  <img class="hero-art" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
+<section id="home" class="screen active home-screen premium-home">
+  <div class="magic-sky" aria-hidden="true">
+    <span class="twinkle star-one"></span>
+    <span class="twinkle star-two"></span>
+    <span class="twinkle star-three"></span>
+    <span class="twinkle star-four"></span>
+    <span class="twinkle star-five"></span>
+
+    <span class="moving-cloud cloud-one"></span>
+    <span class="moving-cloud cloud-two"></span>
+    <span class="moving-cloud cloud-three"></span>
+  </div>
+
+  <div class="luna-wrap">
+    <img class="hero-art luna-rock" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
+  </div>
 
   <h1>Moon Nest</h1>
   <p class="subtitle">A calm bedtime journey with Luna.</p>
 
-<button class="main-cta" onclick="openScreen('routine')">
-  Start Bedtime 
-</button>>
+  <button class="main-cta shimmer-button" onclick="openScreen('routine')">
+    <span>⭐</span>
+    Start Bedtime
+    <span>⭐</span>
+  </button>
 
   <div class="feature-grid">
     <button class="feature-card" onclick="openScreen('breathing')">
