@@ -15,7 +15,6 @@ function openScreen(screenId) {
   }
 
   updateStars();
-  updateJourney();
 }
 
 function saveRoutine() {
@@ -23,7 +22,6 @@ function saveRoutine() {
 
   localStorage.setItem("moonNestStars", checkedBoxes);
   updateStars();
-  updateJourney();
 }
 
 function finishRoutine() {
@@ -35,10 +33,7 @@ function finishRoutine() {
   }
 
   localStorage.setItem("moonNestStars", checkedBoxes);
-  localStorage.setItem("moonNestRoutineDone", "yes");
-
   updateStars();
-  updateJourney();
   openScreen("breathing");
 }
 
@@ -53,38 +48,12 @@ function updateStars() {
 
 function resetStars() {
   localStorage.setItem("moonNestStars", "0");
-  localStorage.removeItem("moonNestRoutineDone");
 
   document.querySelectorAll("#routine input").forEach((box) => {
     box.checked = false;
   });
 
   updateStars();
-  updateJourney();
-}
-
-function updateJourney() {
-  const routineDone = localStorage.getItem("moonNestRoutineDone") === "yes";
-  const stars = Number(localStorage.getItem("moonNestStars") || "0");
-
-  setStep("stepRoutine", routineDone || stars >= 5);
-  setStep("stepBreathing", routineDone);
-  setStep("stepStory", false);
-  setStep("stepSleep", false);
-}
-
-function setStep(id, isDone) {
-  const step = document.getElementById(id);
-
-  if (!step) {
-    return;
-  }
-
-  if (isDone) {
-    step.classList.add("done");
-  } else {
-    step.classList.remove("done");
-  }
 }
 
 function startBreathing() {
@@ -153,7 +122,7 @@ function setSoundTimer(minutes) {
   const timerStatus = document.getElementById("timerStatus");
 
   if (!timerStatus) {
-    alert("Timer status line is missing in index.html.");
+    alert("Timer status line is missing.");
     return;
   }
 
@@ -176,4 +145,3 @@ function setSoundTimer(minutes) {
 }
 
 updateStars();
-updateJourney();
