@@ -822,3 +822,43 @@ input[type="checkbox"] {
     min-height: 86px;
   }
 }
+   .home-screen .feature-card {
+  min-height: 94px;
+  margin: 0;
+  padding: 12px;
+  border-radius: 22px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 30% 15%, rgba(255, 246, 184, 0.16), transparent 26%),
+    linear-gradient(180deg, rgba(94, 70, 168, 0.72), rgba(41, 31, 99, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.home-screen .feature-card span {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 10px rgba(255, 246, 184, 0.45));
+  animation: softIconFloat 4.8s ease-in-out infinite;
+}
+
+.home-screen .feature-card strong {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+}
+
+.home-screen .main-cta {
+  box-shadow:
+    0 16px 32px rgba(255, 226, 116, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.premium-home {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
