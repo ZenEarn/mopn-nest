@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 
-  <meta name="theme-color" content="#140f35" />
+  <meta name="theme-color" content="#120c35" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Moon Nest" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,60 +18,58 @@
 <body>
   <main class="app">
 
-<section id="home" class="screen active home-screen premium-home">
-  <div class="magic-sky" aria-hidden="true">
-    <span class="twinkle star-one"></span>
-    <span class="twinkle star-two"></span>
-    <span class="twinkle star-three"></span>
-    <span class="twinkle star-four"></span>
-    <span class="twinkle star-five"></span>
+    <section id="home" class="screen active home-screen">
+      <div class="magic-sky" aria-hidden="true">
+        <span class="star star-one"></span>
+        <span class="star star-two"></span>
+        <span class="star star-three"></span>
+        <span class="star star-four"></span>
+        <span class="cloud cloud-one"></span>
+        <span class="cloud cloud-two"></span>
+      </div>
 
-    <span class="moving-cloud cloud-one"></span>
-    <span class="moving-cloud cloud-two"></span>
-    <span class="moving-cloud cloud-three"></span>
-  </div>
+      <div class="hero-card">
+        <img class="hero-art" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
+      </div>
 
-  <div class="luna-wrap">
-    <img class="hero-art luna-rock" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
-  </div>
+      <h1>Moon Nest</h1>
+      <p class="subtitle">A calm bedtime journey with Luna.</p>
 
-  <h1>Moon Nest</h1>
-  <p class="subtitle">A calm bedtime journey with Luna.</p>
+      <button class="main-cta" onclick="openScreen('routine')">
+        <span>⭐</span>
+        Start Bedtime
+        <span>⭐</span>
+      </button>
 
-  <button class="main-cta shimmer-button" onclick="openScreen('routine')">
-    <span>⭐</span>
-    Start Bedtime
-    <span>⭐</span>
-  </button>
+      <div class="feature-grid">
+        <button class="feature-card" onclick="openScreen('breathing')">
+          <span>🫧</span>
+          <strong>Breathing</strong>
+        </button>
 
-  <div class="feature-grid">
-    <button class="feature-card" onclick="openScreen('breathing')">
-      <span>🫧</span>
-      <strong>Breathing</strong>
-    </button>
+        <button class="feature-card" onclick="openScreen('story')">
+          <span>📖</span>
+          <strong>Story</strong>
+        </button>
 
-    <button class="feature-card" onclick="openScreen('story')">
-      <span>📖</span>
-      <strong>Story</strong>
-    </button>
+        <button class="feature-card" onclick="openScreen('sounds')">
+          <span>🎵</span>
+          <strong>Sounds</strong>
+        </button>
 
-    <button class="feature-card" onclick="openScreen('sounds')">
-      <span>🎵</span>
-      <strong>Sounds</strong>
-    </button>
+        <button class="feature-card" onclick="openScreen('rewards')">
+          <span>⭐</span>
+          <strong>Stars</strong>
+        </button>
+      </div>
 
-    <button class="feature-card" onclick="openScreen('rewards')">
-      <span>⭐</span>
-      <strong>Stars</strong>
-    </button>
-  </div>
+      <div class="home-links">
+        <button onclick="openScreen('parent')">Parent Info</button>
+        <span>•</span>
+        <button onclick="openScreen('legal')">Privacy & Terms</button>
+      </div>
+    </section>
 
-  <div class="home-links">
-    <button onclick="openScreen('parent')">Parent Info</button>
-    <span>•</span>
-    <button onclick="openScreen('legal')">Privacy & Terms</button>
-  </div>
-</section>
     <section id="routine" class="screen">
       <header>
         <button class="back" onclick="openScreen('home')">←</button>
@@ -159,7 +157,7 @@
         <button onclick="playSound('music.m4a')">Music</button>
       </div>
 
-      <p class="page-text timer-title">Sleep timer</p>
+      <p class="timer-title">Sleep timer</p>
 
       <div class="sound-grid">
         <button onclick="setSoundTimer(15)">15 min</button>
