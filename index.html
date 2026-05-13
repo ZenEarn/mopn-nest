@@ -6,121 +6,467 @@
 
   <title>Moon Nest</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
-
   <meta name="theme-color" content="#120c35" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Moon Nest" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: #08091f;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at top, rgba(255, 232, 160, 0.18), transparent 24%),
+        radial-gradient(circle at 80% 18%, rgba(178, 132, 255, 0.24), transparent 34%),
+        radial-gradient(circle at 15% 80%, rgba(82, 193, 255, 0.13), transparent 34%),
+        linear-gradient(160deg, #07071f, #17103b, #291858, #061e37);
+    }
+
+    .app {
+      width: 100%;
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen {
+      display: none;
+      width: 100%;
+      padding: 20px;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(88, 70, 155, 0.76), rgba(24, 22, 69, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .home-screen {
+      text-align: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 230px;
+      margin: 0 auto 16px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow:
+        0 18px 44px rgba(0, 0, 0, 0.32),
+        0 0 40px rgba(255, 230, 150, 0.12);
+    }
+
+    .hero-art {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 32px;
+      animation: lunaRock 6s ease-in-out infinite;
+      transform-origin: 50% 86%;
+    }
+
+    .missing-art {
+      display: none;
+      padding: 34px 18px;
+      border-radius: 28px;
+      color: #fff7bd;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    h1 {
+      margin: 8px 0 6px;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -1.2px;
+      text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.25),
+        0 9px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    h2 {
+      margin: 0;
+      flex: 1;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .subtitle,
+    .page-text {
+      margin: 10px auto 0;
+      max-width: 330px;
+      text-align: center;
+      color: #efe9ff;
+      font-size: 15.5px;
+      line-height: 1.45;
+    }
+
+    .subtitle {
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      min-height: 54px;
+      margin: 9px 0;
+      padding: 13px 16px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 900;
+      color: #211650;
+      background: linear-gradient(180deg, #fff8c9, #ffe66d);
+      box-shadow:
+        0 11px 26px rgba(0, 0, 0, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.88);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .main-cta {
+      min-height: 62px;
+      margin: 8px 0 18px;
+      border-radius: 26px;
+      font-size: 18px;
+      box-shadow:
+        0 16px 34px rgba(255, 226, 116, 0.2),
+        0 12px 28px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .feature-card {
+      min-height: 92px;
+      margin: 0;
+      padding: 12px;
+      border-radius: 24px;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(94, 70, 174, 0.86), rgba(36, 30, 96, 0.94));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .feature-card span {
+      display: block;
+      font-size: 31px;
+      margin-bottom: 5px;
+    }
+
+    .feature-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 17px;
+    }
+
+    .wide-card {
+      grid-column: span 2;
+      min-height: 74px;
+    }
+
+    .home-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 18px;
+      color: #efe9ff;
+    }
+
+    .home-links button {
+      width: auto;
+      min-height: auto;
+      margin: 0;
+      padding: 0;
+      color: #efe9ff;
+      background: transparent;
+      box-shadow: none;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .back {
+      width: 46px;
+      min-height: 46px;
+      margin: 0;
+      border-radius: 16px;
+      font-size: 22px;
+    }
+
+    .routine-list {
+      margin: 22px 0;
+    }
+
+    .routine-list label {
+      display: block;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.3);
+      margin-right: 12px;
+    }
+
+    .card {
+      margin: 22px 0;
+      padding: 20px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      line-height: 1.55;
+    }
+
+    .breath-circle {
+      width: 118px;
+      height: 118px;
+      margin: 18px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff7ba, #b998ff);
+      box-shadow: 0 0 35px rgba(255, 246, 186, 0.55);
+      transition: transform 3s ease-in-out;
+    }
+
+    .breath-circle.big {
+      transform: scale(1.28);
+    }
+
+    #breathText {
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .story-cover,
+    .friends-art {
+      display: block;
+      width: 100%;
+      margin: 22px 0;
+      border-radius: 28px;
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.32),
+        0 0 35px rgba(255, 246, 184, 0.1);
+    }
+
+    .story-video {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+      background: #000;
+    }
+
+    .sound-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .sound-grid button {
+      min-height: 82px;
+      margin: 0;
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .timer-title {
+      margin: 18px 0 0;
+      text-align: center;
+      color: #fff7bd;
+      font-weight: 900;
+    }
+
+    .reward-card {
+      text-align: center;
+    }
+
+    #starNumber {
+      margin: 16px 0;
+      font-size: 48px;
+      font-weight: 950;
+    }
+
+    .locked {
+      opacity: 0.76;
+    }
+
+    @keyframes lunaRock {
+      0% {
+        transform: rotate(-1.5deg) translateY(0);
+      }
+
+      50% {
+        transform: rotate(1.5deg) translateY(-5px);
+      }
+
+      100% {
+        transform: rotate(-1.5deg) translateY(0);
+      }
+    }
+
+    @media (max-width: 390px) {
+      .app {
+        padding: 10px;
+        align-items: flex-start;
+      }
+
+      .screen {
+        padding: 16px;
+        border-radius: 28px;
+      }
+
+      .hero-card {
+        max-width: 180px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .feature-card {
+        min-height: 84px;
+      }
+
+      .wide-card {
+        min-height: 70px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <main class="app">
 
     <section id="home" class="screen active home-screen">
-      <div class="magic-sky" aria-hidden="true">
-        <span class="star star-one"></span>
-        <span class="star star-two"></span>
-        <span class="star star-three"></span>
-        <span class="star star-four"></span>
-        <span class="cloud cloud-one"></span>
-        <span class="cloud cloud-two"></span>
-      </div>
-
       <div class="hero-card">
-        <img class="hero-art" src="luna_upload.png" alt="Luna sleeping in a moon nest" />
+        <img
+          class="hero-art"
+          src="luna_upload.png"
+          alt="Luna sleeping in a moon nest"
+          onerror="this.style.display='none'; document.getElementById('missingLuna').style.display='block';"
+        />
+        <div id="missingLuna" class="missing-art">Luna image missing</div>
       </div>
 
       <h1>Moon Nest</h1>
       <p class="subtitle">A calm bedtime journey with Luna.</p>
 
-      <button class="main-cta" onclick="openScreen('routine')">
-        <span>⭐</span>
-        Start Bedtime
-        <span>⭐</span>
-      </button>
+      <button class="main-cta" data-screen="routine">⭐ Start Bedtime ⭐</button>
 
       <div class="feature-grid">
-        <button class="feature-card" onclick="openScreen('breathing')">
+        <button class="feature-card" data-screen="breathing">
           <span>🫧</span>
           <strong>Breathing</strong>
         </button>
 
-        <button class="feature-card" onclick="openScreen('story')">
+        <button class="feature-card" data-screen="story">
           <span>📖</span>
           <strong>Story</strong>
         </button>
 
-        <button class="feature-card" onclick="openScreen('sounds')">
+        <button class="feature-card" data-screen="sounds">
           <span>🎵</span>
           <strong>Sounds</strong>
         </button>
 
-        <button class="feature-card" onclick="openScreen('rewards')">
+        <button class="feature-card" data-screen="rewards">
           <span>⭐</span>
           <strong>Stars</strong>
         </button>
 
-        <button class="feature-card wide-card" onclick="openScreen('friends')">
+        <button class="feature-card wide-card" data-screen="friends">
           <span>🦊</span>
           <strong>Bedtime Friends</strong>
         </button>
 
-        <button class="feature-card wide-card" onclick="openScreen('library')">
+        <button class="feature-card wide-card" data-screen="library">
           <span>🌙</span>
           <strong>Story Packs</strong>
         </button>
       </div>
 
       <div class="home-links">
-        <button onclick="openScreen('parent')">Parent Info</button>
+        <button data-screen="parent">Parent Info</button>
         <span>•</span>
-        <button onclick="openScreen('legal')">Privacy & Terms</button>
+        <button data-screen="legal">Privacy & Terms</button>
       </div>
     </section>
 
     <section id="routine" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Bedtime Routine</h2>
       </header>
 
-      <p class="page-text">Tap each step when it is done. Luna will help you get ready for sleep.</p>
+      <p class="page-text">Tap each step when it is done.</p>
 
       <div class="routine-list">
-        <label>
-          <input type="checkbox" onchange="saveRoutine()" />
-          Brush teeth
-        </label>
-
-        <label>
-          <input type="checkbox" onchange="saveRoutine()" />
-          Put on pyjamas
-        </label>
-
-        <label>
-          <input type="checkbox" onchange="saveRoutine()" />
-          Pack school bag
-        </label>
-
-        <label>
-          <input type="checkbox" onchange="saveRoutine()" />
-          Toilet
-        </label>
-
-        <label>
-          <input type="checkbox" onchange="saveRoutine()" />
-          Get into bed
-        </label>
+        <label><input type="checkbox" class="routine-check" /> Brush teeth</label>
+        <label><input type="checkbox" class="routine-check" /> Put on pyjamas</label>
+        <label><input type="checkbox" class="routine-check" /> Pack school bag</label>
+        <label><input type="checkbox" class="routine-check" /> Toilet</label>
+        <label><input type="checkbox" class="routine-check" /> Get into bed</label>
       </div>
 
-      <button onclick="finishRoutine()">Finish Bedtime</button>
+      <button id="finishRoutineBtn">Finish Bedtime</button>
     </section>
 
     <section id="breathing" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Calm Breathing</h2>
       </header>
 
@@ -128,23 +474,28 @@
         Follow the glowing moon. Breathe in slowly, hold softly, then breathe out.
       </p>
 
-      <div class="breath-card">
+      <div class="card">
         <div id="breathCircle" class="breath-circle"></div>
         <h3 id="breathText">Ready?</h3>
       </div>
 
-      <button onclick="startBreathing()">Start Breathing</button>
+      <button id="startBreathingBtn">Start Breathing</button>
     </section>
 
     <section id="story" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Sleep Story</h2>
       </header>
 
       <p class="page-text">Watch Luna’s calming bedtime story.</p>
 
-      <img class="story-cover" src="story_cover.png" alt="Luna and the Sleepy Moon story cover" />
+      <img
+        class="story-cover"
+        src="story_cover.png"
+        alt="Luna and the Sleepy Moon story cover"
+        onerror="this.style.display='none';"
+      />
 
       <video class="story-video" controls playsinline>
         <source src="story.mp4" type="video/mp4" />
@@ -154,7 +505,7 @@
 
     <section id="sounds" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Sleep Sounds</h2>
       </header>
 
@@ -163,19 +514,19 @@
       </p>
 
       <div class="sound-grid">
-        <button onclick="playSound('forest.m4a')">🌲 Forest</button>
-        <button onclick="playSound('rainforest.m4a')">🌧 Rainforest</button>
-        <button onclick="playSound('Ocean.m4a')">🌊 Ocean</button>
-        <button onclick="playSound('music.m4a')">🎵 Music</button>
+        <button class="sound-btn" data-sound="forest.m4a">🌲 Forest</button>
+        <button class="sound-btn" data-sound="rainforest.m4a">🌧 Rainforest</button>
+        <button class="sound-btn" data-sound="Ocean.m4a">🌊 Ocean</button>
+        <button class="sound-btn" data-sound="music.m4a">🎵 Music</button>
       </div>
 
       <p class="timer-title">Sleep timer</p>
 
       <div class="sound-grid">
-        <button onclick="setSoundTimer(15)">15 min</button>
-        <button onclick="setSoundTimer(30)">30 min</button>
-        <button onclick="setSoundTimer(60)">60 min</button>
-        <button class="secondary" onclick="stopSound()">Stop</button>
+        <button class="timer-btn" data-minutes="15">15 min</button>
+        <button class="timer-btn" data-minutes="30">30 min</button>
+        <button class="timer-btn" data-minutes="60">60 min</button>
+        <button class="secondary" id="stopSoundBtn">Stop</button>
       </div>
 
       <p id="timerStatus" class="page-text"></p>
@@ -183,22 +534,22 @@
 
     <section id="rewards" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>My Stars</h2>
       </header>
 
-      <div class="reward-card">
+      <div class="card reward-card">
         <p>You have earned</p>
         <div id="starNumber">0 ⭐</div>
         <p>Complete bedtime steps to collect stars.</p>
       </div>
 
-      <button onclick="resetStars()">Reset Stars</button>
+      <button id="resetStarsBtn">Reset Stars</button>
     </section>
 
     <section id="friends" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Bedtime Friends</h2>
       </header>
 
@@ -206,29 +557,32 @@
         Meet Luna, Fable and Twinkle — your magical bedtime friends.
       </p>
 
-      <img class="friends-art" src="bedtime_friends.png" alt="Moon Nest bedtime friends Luna Fable and Twinkle" />
+      <img
+        class="friends-art"
+        src="bedtime_friends.png"
+        alt="Moon Nest bedtime friends Luna Fable and Twinkle"
+        onerror="this.style.display='none';"
+      />
 
-      <div class="character-list">
-        <div class="character-card">
-          <h3>🐶 Luna</h3>
-          <p>The sleepy puppy who helps children feel safe and ready for bed.</p>
-        </div>
+      <div class="card">
+        <h3>🐶 Luna</h3>
+        <p>The sleepy puppy who helps children feel safe and ready for bed.</p>
+      </div>
 
-        <div class="character-card">
-          <h3>🦊 Fable</h3>
-          <p>The gentle fox who brings soft bedtime stories and quiet imagination.</p>
-        </div>
+      <div class="card">
+        <h3>🦊 Fable</h3>
+        <p>The gentle fox who brings soft bedtime stories and quiet imagination.</p>
+      </div>
 
-        <div class="character-card">
-          <h3>🦋 Twinkle</h3>
-          <p>The glowing butterfly who reminds children to breathe, relax and dream.</p>
-        </div>
+      <div class="card">
+        <h3>🦋 Twinkle</h3>
+        <p>The glowing butterfly who reminds children to breathe, relax and dream.</p>
       </div>
     </section>
 
     <section id="library" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Story Packs</h2>
       </header>
 
@@ -236,72 +590,281 @@
         Build Moon Nest into a bigger bedtime app with new stories, characters and calming sounds.
       </p>
 
-      <div class="story-card">
+      <div class="card">
         <h3>🌙 Luna and the Sleepy Moon</h3>
         <p>Included story with Luna, Fable and Twinkle.</p>
       </div>
 
-      <div class="story-card locked">
+      <div class="card locked">
         <h3>🦊 Fable’s Forest Dream</h3>
         <p>Coming soon.</p>
       </div>
 
-      <div class="story-card locked">
+      <div class="card locked">
         <h3>🦋 Twinkle’s Star Garden</h3>
-        <p>Coming soon.</p>
-      </div>
-
-      <div class="story-card locked">
-        <h3>☁️ Cloud Castle Sleep Sounds</h3>
         <p>Coming soon.</p>
       </div>
     </section>
 
     <section id="parent" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Parent Info</h2>
       </header>
 
-      <div class="story-card">
+      <div class="card">
         <h3>About Moon Nest</h3>
-
         <p>
           Moon Nest is a calming bedtime routine app designed to help children
           slow down, feel safe, and prepare for sleep.
         </p>
-
         <p>
-          Luna is the sleepy puppy who guides children through bedtime with a
-          routine checklist, calming breathing, gentle sounds, sleep timer,
-          bedtime friends and a relaxing sleep story.
+          Luna, Fable and Twinkle guide children through a routine checklist,
+          calming breathing, gentle sounds, bedtime stories and sleep rewards.
         </p>
-
         <p>
-          Moon Nest is designed as a quiet bedtime helper. It does not need child
-          accounts, messages, location, or personal details.
-        </p>
-
-        <p>
-          For best results, use Moon Nest with low screen brightness, gentle
-          volume, and a calm bedtime routine.
+          Moon Nest does not need child accounts, messages, location or personal details.
         </p>
       </div>
     </section>
 
     <section id="legal" class="screen">
       <header>
-        <button class="back" onclick="openScreen('home')">←</button>
+        <button class="back" data-screen="home">←</button>
         <h2>Privacy & Terms</h2>
       </header>
 
-      <div class="story-card">
+      <div class="card">
         <h3>Privacy Policy</h3>
-
         <p>
           Moon Nest is designed as a calm bedtime helper for children and families.
           The app does not require child accounts, names, emails, messages,
-          location, photos, or personal details.
+          location, photos or personal details.
+        </p>
+        <p>
+          Bedtime stars are stored only on the device using local storage.
         </p>
 
-        <
+        <h3>Terms of Use</h3>
+        <p>
+          Moon Nest is a general bedtime routine and relaxation app. It is not
+          medical advice, sleep therapy or a health service.
+        </p>
+        <p>
+          Parents and carers are responsible for deciding whether Moon Nest is
+          suitable for their child.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let currentAudio = null;
+    let soundTimer = null;
+    let timerOne = null;
+    let timerTwo = null;
+    let timerThree = null;
+
+    function openScreen(screenId) {
+      document.querySelectorAll(".screen").forEach((screen) => {
+        screen.classList.remove("active");
+      });
+
+      const screen = document.getElementById(screenId);
+
+      if (screen) {
+        screen.classList.add("active");
+      }
+
+      document.querySelectorAll("video").forEach((video) => {
+        video.pause();
+      });
+
+      updateStars();
+      window.scrollTo(0, 0);
+    }
+
+    function saveRoutine() {
+      const boxes = document.querySelectorAll(".routine-check");
+      const routineState = [];
+      let checkedCount = 0;
+
+      boxes.forEach((box) => {
+        routineState.push(box.checked);
+
+        if (box.checked) {
+          checkedCount = checkedCount + 1;
+        }
+      });
+
+      localStorage.setItem("moonNestRoutine", JSON.stringify(routineState));
+      localStorage.setItem("moonNestStars", checkedCount);
+      updateStars();
+    }
+
+    function loadRoutine() {
+      const savedRoutine = localStorage.getItem("moonNestRoutine");
+
+      if (!savedRoutine) {
+        return;
+      }
+
+      const routineState = JSON.parse(savedRoutine);
+      const boxes = document.querySelectorAll(".routine-check");
+
+      boxes.forEach((box, index) => {
+        box.checked = routineState[index] || false;
+      });
+    }
+
+    function finishRoutine() {
+      const checkedBoxes = document.querySelectorAll(".routine-check:checked").length;
+
+      if (checkedBoxes < 5) {
+        alert("Keep going. Finish all bedtime steps first.");
+        return;
+      }
+
+      localStorage.setItem("moonNestStars", checkedBoxes);
+      updateStars();
+      openScreen("breathing");
+    }
+
+    function updateStars() {
+      const stars = localStorage.getItem("moonNestStars") || "0";
+      const starNumber = document.getElementById("starNumber");
+
+      if (starNumber) {
+        starNumber.textContent = stars + " ⭐";
+      }
+    }
+
+    function resetStars() {
+      localStorage.setItem("moonNestStars", "0");
+      localStorage.removeItem("moonNestRoutine");
+
+      document.querySelectorAll(".routine-check").forEach((box) => {
+        box.checked = false;
+      });
+
+      updateStars();
+    }
+
+    function startBreathing() {
+      clearTimeout(timerOne);
+      clearTimeout(timerTwo);
+      clearTimeout(timerThree);
+
+      const circle = document.getElementById("breathCircle");
+      const text = document.getElementById("breathText");
+
+      text.textContent = "Breathe in...";
+      circle.classList.add("big");
+
+      timerOne = setTimeout(() => {
+        text.textContent = "Hold softly...";
+      }, 3000);
+
+      timerTwo = setTimeout(() => {
+        text.textContent = "Breathe out...";
+        circle.classList.remove("big");
+      }, 5500);
+
+      timerThree = setTimeout(() => {
+        text.textContent = "Beautiful. Again?";
+      }, 9000);
+    }
+
+    function playSound(soundName) {
+      stopSound();
+
+      currentAudio = new Audio(soundName);
+      currentAudio.loop = true;
+      currentAudio.volume = 0.45;
+
+      currentAudio.play().catch(() => {
+        alert("Sound file missing or blocked. Check this file name: " + soundName);
+      });
+
+      const timerStatus = document.getElementById("timerStatus");
+
+      if (timerStatus) {
+        timerStatus.textContent = "Playing: " + soundName;
+      }
+    }
+
+    function stopSound() {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+
+      if (soundTimer) {
+        clearTimeout(soundTimer);
+        soundTimer = null;
+      }
+
+      const timerStatus = document.getElementById("timerStatus");
+
+      if (timerStatus) {
+        timerStatus.textContent = "Sound stopped.";
+      }
+    }
+
+    function setSoundTimer(minutes) {
+      const timerStatus = document.getElementById("timerStatus");
+
+      if (!currentAudio) {
+        timerStatus.textContent = "Choose a sound first.";
+        alert("Choose a sound first.");
+        return;
+      }
+
+      if (soundTimer) {
+        clearTimeout(soundTimer);
+      }
+
+      timerStatus.textContent = "Sound will stop in " + minutes + " minutes.";
+
+      soundTimer = setTimeout(() => {
+        stopSound();
+        timerStatus.textContent = "Sound stopped.";
+      }, minutes * 60 * 1000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-screen]").forEach((button) => {
+        button.addEventListener("click", () => {
+          openScreen(button.dataset.screen);
+        });
+      });
+
+      document.querySelectorAll(".routine-check").forEach((box) => {
+        box.addEventListener("change", saveRoutine);
+      });
+
+      document.querySelectorAll(".sound-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          playSound(button.dataset.sound);
+        });
+      });
+
+      document.querySelectorAll(".timer-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          setSoundTimer(Number(button.dataset.minutes));
+        });
+      });
+
+      document.getElementById("finishRoutineBtn").addEventListener("click", finishRoutine);
+      document.getElementById("startBreathingBtn").addEventListener("click", startBreathing);
+      document.getElementById("stopSoundBtn").addEventListener("click", stopSound);
+      document.getElementById("resetStarsBtn").addEventListener("click", resetStars);
+
+      loadRoutine();
+      updateStars();
+    });
+  </script>
+</body>
+</html>
