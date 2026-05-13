@@ -1,4 +1,5 @@
 let currentAudio = null;
+let soundTimer = null;
 let timerOne = null;
 let timerTwo = null;
 let timerThree = null;
@@ -14,14 +15,40 @@ function openScreen(screenId) {
     screen.classList.add("active");
   }
 
+  stopVideos();
   updateStars();
+  window.scrollTo(0, 0);
 }
 
 function saveRoutine() {
+  const boxes = document.querySelectorAll("#routine input");
   const checkedBoxes = document.querySelectorAll("#routine input:checked").length;
 
+  const routineState = [];
+
+  boxes.forEach((box) => {
+    routineState.push(box.checked);
+  });
+
+  localStorage.setItem("moonNestRoutine", JSON.stringify(routineState));
   localStorage.setItem("moonNestStars", checkedBoxes);
+
   updateStars();
+}
+
+function loadRoutine() {
+  const savedRoutine = localStorage.getItem("moonNestRoutine");
+
+  if (!savedRoutine) {
+    return;
+  }
+
+  const routineState = JSON.parse(savedRoutine);
+  const boxes = document.querySelectorAll("#routine input");
+
+  boxes.forEach((box, index) => {
+    box.checked = routineState[index] || false;
+  });
 }
 
 function finishRoutine() {
@@ -48,6 +75,7 @@ function updateStars() {
 
 function resetStars() {
   localStorage.setItem("moonNestStars", "0");
+  localStorage.removeItem("moonNestRoutine");
 
   document.querySelectorAll("#routine input").forEach((box) => {
     box.checked = false;
@@ -88,15 +116,19 @@ function startBreathing() {
 function playSound(soundName) {
   stopSound();
 
-  const filePath = soundName;
-
-  currentAudio = new Audio(filePath);
+  currentAudio = new Audio(soundName);
   currentAudio.loop = true;
   currentAudio.volume = 0.45;
 
   currentAudio.play().catch(() => {
-    alert("Missing sound file: " + filePath);
+    alert("Tap again to play the sound, or check that this file exists: " + soundName);
   });
+
+  const timerStatus = document.getElementById("timerStatus");
+
+  if (timerStatus) {
+    timerStatus.textContent = "Playing: " + soundName;
+  }
 }
 
 function stopSound() {
@@ -106,9 +138,9 @@ function stopSound() {
     currentAudio = null;
   }
 
-  if (window.soundTimer) {
-    clearTimeout(window.soundTimer);
-    window.soundTimer = null;
+  if (soundTimer) {
+    clearTimeout(soundTimer);
+    soundTimer = null;
   }
 
   const timerStatus = document.getElementById("timerStatus");
@@ -122,7 +154,6 @@ function setSoundTimer(minutes) {
   const timerStatus = document.getElementById("timerStatus");
 
   if (!timerStatus) {
-    alert("Timer status line is missing.");
     return;
   }
 
@@ -132,16 +163,25 @@ function setSoundTimer(minutes) {
     return;
   }
 
-  if (window.soundTimer) {
-    clearTimeout(window.soundTimer);
+  if (soundTimer) {
+    clearTimeout(soundTimer);
   }
 
   timerStatus.textContent = "Sound will stop in " + minutes + " minutes.";
 
-  window.soundTimer = setTimeout(() => {
+  soundTimer = setTimeout(() => {
     stopSound();
     timerStatus.textContent = "Sound stopped.";
   }, minutes * 60 * 1000);
 }
 
-updateStars();
+function stopVideos() {
+  document.querySelectorAll("video").forEach((video) => {
+    video.pause();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadRoutine();
+  updateStars();
+});
