@@ -24,6 +24,7 @@
         <span class="star star-two"></span>
         <span class="star star-three"></span>
         <span class="star star-four"></span>
+        <span class="star star-five"></span>
         <span class="cloud cloud-one"></span>
         <span class="cloud cloud-two"></span>
       </div>
@@ -62,6 +63,10 @@
           <strong>Stars</strong>
         </button>
       </div>
+
+      <button class="friends-link" onclick="openScreen('friends')">
+        Meet Luna, Fable & Twinkle
+      </button>
 
       <div class="home-links">
         <button onclick="openScreen('parent')">Parent Info</button>
@@ -132,12 +137,19 @@
         <h2>Sleep Story</h2>
       </header>
 
+      <img class="story-cover" src="story_cover.png" alt="Luna and the Sleepy Moon story cover" />
+
       <p class="page-text">Watch Luna’s calming bedtime story.</p>
 
       <video class="story-video" controls playsinline>
         <source src="story.mp4" type="video/mp4" />
         Your browser does not support video.
       </video>
+
+      <div class="story-card small-card">
+        <h3>More stories coming soon</h3>
+        <p>Fable’s Forest Nap and Twinkle’s Star Trail can become extra story packs later.</p>
+      </div>
     </section>
 
     <section id="sounds" class="screen">
@@ -184,6 +196,32 @@
       <button onclick="resetStars()">Reset Stars</button>
     </section>
 
+    <section id="friends" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Bedtime Friends</h2>
+      </header>
+
+      <img class="friends-art" src="bedtime_friends.png" alt="Luna, Fable and Twinkle bedtime friends" />
+
+      <div class="character-grid">
+        <div class="character-card">
+          <h3>Luna</h3>
+          <p>The sleepy puppy who helps start bedtime softly.</p>
+        </div>
+
+        <div class="character-card">
+          <h3>Fable</h3>
+          <p>The gentle fox who brings cozy forest stories.</p>
+        </div>
+
+        <div class="character-card">
+          <h3>Twinkle</h3>
+          <p>The magical butterfly who lights the way to sleep.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="parent" class="screen">
       <header>
         <button class="back" onclick="openScreen('home')">←</button>
@@ -199,9 +237,9 @@
         </p>
 
         <p>
-          Luna is the sleepy puppy who guides children through bedtime with a
-          routine checklist, calming breathing, gentle sounds, sleep timer, and
-          a relaxing sleep story.
+          Luna, Fable, and Twinkle guide children through bedtime with a routine
+          checklist, calming breathing, gentle sounds, a sleep timer, rewards,
+          and relaxing story content.
         </p>
 
         <p>
@@ -238,7 +276,7 @@
 
         <p>
           The app uses audio, video, and images only to provide bedtime routines,
-          calming sounds, and Luna’s sleep story.
+          calming sounds, and story content.
         </p>
 
         <h3>Terms of Use</h3>
@@ -253,9 +291,7 @@
           suitable for their child.
         </p>
 
-        <p>
-          Contact: support@example.com
-        </p>
+        <p>Contact: support@example.com</p>
       </div>
     </section>
 
