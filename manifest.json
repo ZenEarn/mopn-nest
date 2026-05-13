@@ -1,11 +1,24 @@
 {
   "name": "Moon Nest",
   "short_name": "Moon Nest",
-  "description": "A calm bedtime routine app for little dreamers.",
+  "description": "A calming bedtime routine app for children and families.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#140f35",
-  "theme_color": "#140f35",
+  "background_color": "#100b2e",
+  "theme_color": "#120c35",
   "orientation": "portrait",
-  "icons": []
+  "icons": [
+    {
+      "src": "luna_upload.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "luna_upload.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
