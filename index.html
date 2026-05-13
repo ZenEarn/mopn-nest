@@ -24,7 +24,6 @@
         <span class="star star-two"></span>
         <span class="star star-three"></span>
         <span class="star star-four"></span>
-        <span class="star star-five"></span>
         <span class="cloud cloud-one"></span>
         <span class="cloud cloud-two"></span>
       </div>
@@ -62,11 +61,17 @@
           <span>⭐</span>
           <strong>Stars</strong>
         </button>
-      </div>
 
-      <button class="friends-link" onclick="openScreen('friends')">
-        Meet Luna, Fable & Twinkle
-      </button>
+        <button class="feature-card wide-card" onclick="openScreen('friends')">
+          <span>🦊</span>
+          <strong>Bedtime Friends</strong>
+        </button>
+
+        <button class="feature-card wide-card" onclick="openScreen('library')">
+          <span>🌙</span>
+          <strong>Story Packs</strong>
+        </button>
+      </div>
 
       <div class="home-links">
         <button onclick="openScreen('parent')">Parent Info</button>
@@ -81,7 +86,7 @@
         <h2>Bedtime Routine</h2>
       </header>
 
-      <p class="page-text">Tap each step when it is done.</p>
+      <p class="page-text">Tap each step when it is done. Luna will help you get ready for sleep.</p>
 
       <div class="routine-list">
         <label>
@@ -137,19 +142,14 @@
         <h2>Sleep Story</h2>
       </header>
 
-      <img class="story-cover" src="story_cover.png" alt="Luna and the Sleepy Moon story cover" />
-
       <p class="page-text">Watch Luna’s calming bedtime story.</p>
+
+      <img class="story-cover" src="story_cover.png" alt="Luna and the Sleepy Moon story cover" />
 
       <video class="story-video" controls playsinline>
         <source src="story.mp4" type="video/mp4" />
         Your browser does not support video.
       </video>
-
-      <div class="story-card small-card">
-        <h3>More stories coming soon</h3>
-        <p>Fable’s Forest Nap and Twinkle’s Star Trail can become extra story packs later.</p>
-      </div>
     </section>
 
     <section id="sounds" class="screen">
@@ -163,10 +163,10 @@
       </p>
 
       <div class="sound-grid">
-        <button onclick="playSound('forest.m4a')">Forest</button>
-        <button onclick="playSound('rainforest.m4a')">Rainforest</button>
-        <button onclick="playSound('Ocean.m4a')">Ocean</button>
-        <button onclick="playSound('music.m4a')">Music</button>
+        <button onclick="playSound('forest.m4a')">🌲 Forest</button>
+        <button onclick="playSound('rainforest.m4a')">🌧 Rainforest</button>
+        <button onclick="playSound('Ocean.m4a')">🌊 Ocean</button>
+        <button onclick="playSound('music.m4a')">🎵 Music</button>
       </div>
 
       <p class="timer-title">Sleep timer</p>
@@ -202,23 +202,58 @@
         <h2>Bedtime Friends</h2>
       </header>
 
-      <img class="friends-art" src="bedtime_friends.png" alt="Luna, Fable and Twinkle bedtime friends" />
+      <p class="page-text">
+        Meet Luna, Fable and Twinkle — your magical bedtime friends.
+      </p>
 
-      <div class="character-grid">
+      <img class="friends-art" src="bedtime_friends.png" alt="Moon Nest bedtime friends Luna Fable and Twinkle" />
+
+      <div class="character-list">
         <div class="character-card">
-          <h3>Luna</h3>
-          <p>The sleepy puppy who helps start bedtime softly.</p>
+          <h3>🐶 Luna</h3>
+          <p>The sleepy puppy who helps children feel safe and ready for bed.</p>
         </div>
 
         <div class="character-card">
-          <h3>Fable</h3>
-          <p>The gentle fox who brings cozy forest stories.</p>
+          <h3>🦊 Fable</h3>
+          <p>The gentle fox who brings soft bedtime stories and quiet imagination.</p>
         </div>
 
         <div class="character-card">
-          <h3>Twinkle</h3>
-          <p>The magical butterfly who lights the way to sleep.</p>
+          <h3>🦋 Twinkle</h3>
+          <p>The glowing butterfly who reminds children to breathe, relax and dream.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="library" class="screen">
+      <header>
+        <button class="back" onclick="openScreen('home')">←</button>
+        <h2>Story Packs</h2>
+      </header>
+
+      <p class="page-text">
+        Build Moon Nest into a bigger bedtime app with new stories, characters and calming sounds.
+      </p>
+
+      <div class="story-card">
+        <h3>🌙 Luna and the Sleepy Moon</h3>
+        <p>Included story with Luna, Fable and Twinkle.</p>
+      </div>
+
+      <div class="story-card locked">
+        <h3>🦊 Fable’s Forest Dream</h3>
+        <p>Coming soon.</p>
+      </div>
+
+      <div class="story-card locked">
+        <h3>🦋 Twinkle’s Star Garden</h3>
+        <p>Coming soon.</p>
+      </div>
+
+      <div class="story-card locked">
+        <h3>☁️ Cloud Castle Sleep Sounds</h3>
+        <p>Coming soon.</p>
       </div>
     </section>
 
@@ -237,9 +272,9 @@
         </p>
 
         <p>
-          Luna, Fable, and Twinkle guide children through bedtime with a routine
-          checklist, calming breathing, gentle sounds, a sleep timer, rewards,
-          and relaxing story content.
+          Luna is the sleepy puppy who guides children through bedtime with a
+          routine checklist, calming breathing, gentle sounds, sleep timer,
+          bedtime friends and a relaxing sleep story.
         </p>
 
         <p>
@@ -269,34 +304,4 @@
           location, photos, or personal details.
         </p>
 
-        <p>
-          Moon Nest stores bedtime stars only on the device using local storage.
-          This helps the app remember progress without sending information to us.
-        </p>
-
-        <p>
-          The app uses audio, video, and images only to provide bedtime routines,
-          calming sounds, and story content.
-        </p>
-
-        <h3>Terms of Use</h3>
-
-        <p>
-          Moon Nest is a general bedtime routine and relaxation app. It is not
-          medical advice, sleep therapy, or a health service.
-        </p>
-
-        <p>
-          Parents and carers are responsible for deciding whether Moon Nest is
-          suitable for their child.
-        </p>
-
-        <p>Contact: support@example.com</p>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+        <
