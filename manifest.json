@@ -5,17 +5,17 @@
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#100b2e",
-  "theme_color": "#120c35",
+  "theme_color": "#100b2e",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "luna_upload.png",
+      "src": "app_icon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "luna_upload.png",
+      "src": "app_icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
