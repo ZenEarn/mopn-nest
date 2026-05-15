@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Moon Nest</title>
-
   <link rel="manifest" href="manifest.json" />
 
   <meta name="theme-color" content="#100b2e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Moon Nest" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <style>
     * {
@@ -19,7 +17,6 @@
     }
 
     html {
-      min-height: 100%;
       background: #08091f;
     }
 
@@ -27,11 +24,10 @@
       margin: 0;
       min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: #ffffff;
+      color: white;
       background:
         radial-gradient(circle at top, rgba(255, 226, 150, 0.18), transparent 28%),
         radial-gradient(circle at 80% 18%, rgba(181, 132, 255, 0.24), transparent 34%),
-        radial-gradient(circle at 15% 85%, rgba(96, 192, 255, 0.12), transparent 38%),
         linear-gradient(160deg, #060720, #17103b, #2b1759, #071f3a);
       overflow-x: hidden;
     }
@@ -41,22 +37,19 @@
       max-width: 430px;
       min-height: 100vh;
       margin: 0 auto;
-      padding: 8px;
+      padding: 7px;
     }
 
     .screen {
       display: none;
       width: 100%;
-      min-height: calc(100vh - 16px);
-      padding: 13px;
-      border-radius: 28px;
+      min-height: calc(100vh - 14px);
+      padding: 12px;
+      border-radius: 26px;
       background:
         radial-gradient(circle at top, rgba(255, 236, 180, 0.08), transparent 30%),
         linear-gradient(180deg, rgba(81, 63, 148, 0.82), rgba(22, 20, 65, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow:
-        0 24px 65px rgba(0, 0, 0, 0.42),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       overflow-x: hidden;
     }
 
@@ -70,34 +63,27 @@
 
     .hero {
       width: 100%;
-      height: 215px;
-      border-radius: 28px;
+      height: 190px;
+      border-radius: 26px;
       overflow: hidden;
       background: rgba(255, 255, 255, 0.08);
-      box-shadow:
-        0 16px 42px rgba(0, 0, 0, 0.34),
-        0 0 42px rgba(255, 225, 130, 0.15);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
     }
 
     .hero img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 28px;
-      animation: floatHero 7s ease-in-out infinite;
+      border-radius: 26px;
+      display: block;
     }
 
     h1 {
-      margin: 10px 0 3px;
+      margin: 9px 0 3px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 38px;
-      line-height: 0.95;
+      font-size: 35px;
       color: #fff7d8;
-      letter-spacing: -0.5px;
-      text-shadow:
-        0 0 18px rgba(255, 245, 202, 0.35),
-        0 10px 28px rgba(0, 0, 0, 0.3);
+      line-height: 1;
     }
 
     h2 {
@@ -109,26 +95,22 @@
     }
 
     h3 {
-      margin: 0 0 8px;
+      margin: 0 0 7px;
       font-size: 20px;
-    }
-
-    p {
-      line-height: 1.45;
     }
 
     .subtitle,
     .page-text {
-      margin: 7px auto 0;
+      margin: 6px auto 0;
       max-width: 330px;
       color: #efe9ff;
-      font-size: 15px;
-      line-height: 1.4;
+      font-size: 14.5px;
+      line-height: 1.35;
       text-align: center;
     }
 
     .subtitle {
-      margin-bottom: 10px;
+      margin-bottom: 9px;
     }
 
     button {
@@ -152,10 +134,9 @@
     }
 
     .main-cta {
-      min-height: 53px;
+      min-height: 52px;
       border-radius: 26px;
       font-size: 18px;
-      letter-spacing: 0.2px;
     }
 
     .feature-grid {
@@ -166,18 +147,15 @@
     }
 
     .feature-card {
-      min-height: 86px;
+      min-height: 82px;
       margin: 0;
-      padding: 9px;
+      padding: 8px;
       color: #ffffff;
       background:
         radial-gradient(circle at 50% 0%, rgba(255, 247, 190, 0.12), transparent 40%),
         linear-gradient(180deg, rgba(91, 68, 171, 0.92), rgba(35, 28, 93, 0.98));
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 22px;
-      box-shadow:
-        0 14px 30px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.16);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -186,38 +164,34 @@
     }
 
     .feature-card img {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       object-fit: contain;
-      border-radius: 14px;
-      filter: drop-shadow(0 0 14px rgba(255, 235, 150, 0.24));
+      border-radius: 12px;
     }
 
     .feature-card strong {
-      display: block;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15.5px;
       line-height: 1;
-      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
     }
 
     .friends-preview {
-      margin: 11px 0 0;
-      padding: 11px;
-      border-radius: 24px;
+      margin: 10px 0 0;
+      padding: 10px;
+      border-radius: 22px;
       background:
         linear-gradient(180deg, rgba(112, 79, 188, 0.72), rgba(38, 30, 95, 0.92));
       border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
     }
 
     .friends-preview img {
       display: block;
       width: 100%;
-      height: 118px;
+      height: 95px;
       object-fit: cover;
-      object-position: top center;
-      border-radius: 18px;
+      object-position: center 44%;
+      border-radius: 17px;
       margin-bottom: 7px;
     }
 
@@ -231,7 +205,7 @@
       margin: 0;
       color: #efe9ff;
       font-size: 13.5px;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     .home-links {
@@ -239,7 +213,7 @@
       justify-content: center;
       align-items: center;
       gap: 9px;
-      margin-top: 13px;
+      margin-top: 12px;
       color: #efe9ff;
     }
 
@@ -259,7 +233,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .back {
@@ -290,19 +264,70 @@
     }
 
     .card {
-      margin: 14px 0;
-      padding: 16px;
-      border-radius: 23px;
+      margin: 12px 0;
+      padding: 15px;
+      border-radius: 22px;
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.13);
-      line-height: 1.45;
     }
 
     .card p {
       margin: 0;
       color: #efe9ff;
       font-size: 15px;
-      overflow-wrap: break-word;
+      line-height: 1.35;
+    }
+
+    .friend-card h3 {
+      color: #fff7bd;
+      font-size: 20px;
+    }
+
+    .friends-art {
+      width: 100%;
+      height: 260px;
+      display: block;
+      margin: 10px 0 12px;
+      border-radius: 22px;
+      object-fit: cover;
+      object-position: top center;
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .story-cover {
+      width: 100%;
+      display: block;
+      margin: 14px 0;
+      border-radius: 22px;
+    }
+
+    .story-video {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 22px;
+      background: #000000;
+    }
+
+    .sound-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .sound-grid button {
+      min-height: 60px;
+      margin: 0;
+      padding: 10px;
+      font-size: 15.5px;
+      line-height: 1.15;
+    }
+
+    .timer-title {
+      margin: 12px 0 0;
+      color: #fff7bd;
+      font-weight: 900;
+      text-align: center;
     }
 
     .breath-circle {
@@ -324,66 +349,6 @@
       font-size: 24px;
     }
 
-    .story-cover {
-      width: 100%;
-      display: block;
-      margin: 16px 0;
-      border-radius: 24px;
-      box-shadow:
-        0 16px 38px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 246, 184, 0.1);
-    }
-
-    .friends-art {
-      width: 100%;
-      display: block;
-      margin: 14px 0;
-      border-radius: 24px;
-      max-height: 310px;
-      object-fit: cover;
-      object-position: top center;
-      background: rgba(0, 0, 0, 0.12);
-      box-shadow:
-        0 16px 38px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 246, 184, 0.1);
-    }
-
-    .story-video {
-      width: 100%;
-      margin-top: 10px;
-      border-radius: 22px;
-      background: #000000;
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
-    }
-
-    .sound-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 14px 0;
-    }
-
-    .sound-grid button {
-      min-height: 60px;
-      margin: 0;
-      padding: 10px;
-      font-size: 15.5px;
-      line-height: 1.15;
-      white-space: normal;
-      overflow-wrap: break-word;
-    }
-
-    .timer-title {
-      margin: 12px 0 0;
-      color: #fff7bd;
-      font-weight: 900;
-      text-align: center;
-    }
-
-    .reward-card {
-      text-align: center;
-    }
-
     #starNumber {
       margin: 12px 0;
       font-size: 42px;
@@ -392,74 +357,30 @@
       color: #fff7bd;
     }
 
-    .friend-card h3 {
-      color: #fff7bd;
-      font-size: 22px;
-    }
-
-    .locked {
-      opacity: 0.76;
-    }
-
-    @keyframes floatHero {
-      0% {
-        transform: translateY(0) scale(1);
-      }
-
-      50% {
-        transform: translateY(-4px) scale(1.01);
-      }
-
-      100% {
-        transform: translateY(0) scale(1);
-      }
-    }
-
     @media (max-width: 390px) {
-      .app {
-        padding: 6px;
-      }
-
-      .screen {
-        padding: 11px;
-        border-radius: 25px;
-      }
-
       .hero {
-        height: 195px;
+        height: 180px;
       }
 
       h1 {
-        font-size: 35px;
-      }
-
-      .subtitle {
-        font-size: 14.5px;
-      }
-
-      .main-cta {
-        min-height: 52px;
+        font-size: 33px;
       }
 
       .feature-card {
-        min-height: 82px;
+        min-height: 78px;
       }
 
       .feature-card img {
-        width: 42px;
-        height: 42px;
-      }
-
-      .feature-card strong {
-        font-size: 15.5px;
+        width: 39px;
+        height: 39px;
       }
 
       .friends-preview img {
-        height: 105px;
+        height: 88px;
       }
 
       .friends-art {
-        max-height: 285px;
+        height: 245px;
       }
     }
   </style>
@@ -614,7 +535,7 @@
         <h2>My Stars</h2>
       </header>
 
-      <div class="card reward-card">
+      <div class="card">
         <p class="page-text">You have earned</p>
         <div id="starNumber">0 stars</div>
         <p class="page-text">Complete bedtime steps to collect stars.</p>
@@ -667,14 +588,6 @@
       </div>
 
       <div class="card">
-        <h3>How it helps</h3>
-        <p>
-          Luna, Fable and Twinkle guide children through bedtime steps,
-          calm breathing, gentle sounds, stories and reward stars.
-        </p>
-      </div>
-
-      <div class="card">
         <h3>Privacy</h3>
         <p>
           Moon Nest does not need child accounts, messages, location or personal details.
@@ -693,13 +606,6 @@
         <p>
           Moon Nest does not require child accounts, names, emails, messages,
           location, photos or personal details.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Local storage</h3>
-        <p>
-          Bedtime stars are stored only on the device using local storage.
         </p>
       </div>
 
