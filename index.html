@@ -33,6 +33,7 @@
         radial-gradient(circle at 80% 18%, rgba(181, 132, 255, 0.24), transparent 34%),
         radial-gradient(circle at 15% 85%, rgba(96, 192, 255, 0.12), transparent 38%),
         linear-gradient(160deg, #060720, #17103b, #2b1759, #071f3a);
+      overflow-x: hidden;
     }
 
     .app {
@@ -47,7 +48,7 @@
       display: none;
       width: 100%;
       min-height: calc(100vh - 16px);
-      padding: 14px;
+      padding: 13px;
       border-radius: 28px;
       background:
         radial-gradient(circle at top, rgba(255, 236, 180, 0.08), transparent 30%),
@@ -56,7 +57,7 @@
       box-shadow:
         0 24px 65px rgba(0, 0, 0, 0.42),
         inset 0 1px 0 rgba(255, 255, 255, 0.18);
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .screen.active {
@@ -69,8 +70,8 @@
 
     .hero {
       width: 100%;
-      height: 230px;
-      border-radius: 30px;
+      height: 215px;
+      border-radius: 28px;
       overflow: hidden;
       background: rgba(255, 255, 255, 0.08);
       box-shadow:
@@ -83,14 +84,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 30px;
+      border-radius: 28px;
       animation: floatHero 7s ease-in-out infinite;
     }
 
     h1 {
-      margin: 12px 0 4px;
+      margin: 10px 0 3px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 40px;
+      font-size: 38px;
       line-height: 0.95;
       color: #fff7d8;
       letter-spacing: -0.5px;
@@ -118,7 +119,7 @@
 
     .subtitle,
     .page-text {
-      margin: 8px auto 0;
+      margin: 7px auto 0;
       max-width: 330px;
       color: #efe9ff;
       font-size: 15px;
@@ -127,14 +128,14 @@
     }
 
     .subtitle {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     button {
       width: 100%;
-      min-height: 50px;
-      margin: 8px 0;
-      padding: 12px 14px;
+      min-height: 48px;
+      margin: 7px 0;
+      padding: 11px 13px;
       border: none;
       border-radius: 20px;
       font-size: 16px;
@@ -151,7 +152,7 @@
     }
 
     .main-cta {
-      min-height: 56px;
+      min-height: 53px;
       border-radius: 26px;
       font-size: 18px;
       letter-spacing: 0.2px;
@@ -160,20 +161,20 @@
     .feature-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 9px;
       margin-top: 6px;
     }
 
     .feature-card {
-      min-height: 94px;
+      min-height: 86px;
       margin: 0;
-      padding: 10px;
+      padding: 9px;
       color: #ffffff;
       background:
         radial-gradient(circle at 50% 0%, rgba(255, 247, 190, 0.12), transparent 40%),
         linear-gradient(180deg, rgba(91, 68, 171, 0.92), rgba(35, 28, 93, 0.98));
       border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
+      border-radius: 22px;
       box-shadow:
         0 14px 30px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.16);
@@ -181,28 +182,28 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .feature-card img {
-      width: 50px;
-      height: 50px;
+      width: 44px;
+      height: 44px;
       object-fit: contain;
-      border-radius: 16px;
-      filter: drop-shadow(0 0 16px rgba(255, 235, 150, 0.25));
+      border-radius: 14px;
+      filter: drop-shadow(0 0 14px rgba(255, 235, 150, 0.24));
     }
 
     .feature-card strong {
       display: block;
       color: #ffffff;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1;
       text-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
     }
 
     .friends-preview {
-      margin: 12px 0 0;
-      padding: 12px;
+      margin: 11px 0 0;
+      padding: 11px;
       border-radius: 24px;
       background:
         linear-gradient(180deg, rgba(112, 79, 188, 0.72), rgba(38, 30, 95, 0.92));
@@ -213,20 +214,21 @@
     .friends-preview img {
       display: block;
       width: 100%;
-      max-height: 155px;
+      height: 118px;
       object-fit: cover;
-      object-position: center;
-      border-radius: 20px;
-      margin-bottom: 8px;
+      object-position: top center;
+      border-radius: 18px;
+      margin-bottom: 7px;
     }
 
     .friends-preview h3 {
       color: #fff7bd;
       font-size: 17px;
+      margin-bottom: 4px;
     }
 
     .friends-preview p {
-      margin: 5px 0 0;
+      margin: 0;
       color: #efe9ff;
       font-size: 13.5px;
       line-height: 1.35;
@@ -237,7 +239,7 @@
       justify-content: center;
       align-items: center;
       gap: 9px;
-      margin-top: 14px;
+      margin-top: 13px;
       color: #efe9ff;
     }
 
@@ -288,18 +290,18 @@
     }
 
     .card {
-      margin: 16px 0;
-      padding: 18px;
-      border-radius: 24px;
+      margin: 14px 0;
+      padding: 16px;
+      border-radius: 23px;
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.13);
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .card p {
       margin: 0;
       color: #efe9ff;
-      font-size: 15.5px;
+      font-size: 15px;
       overflow-wrap: break-word;
     }
 
@@ -322,8 +324,7 @@
       font-size: 24px;
     }
 
-    .story-cover,
-    .friends-art {
+    .story-cover {
       width: 100%;
       display: block;
       margin: 16px 0;
@@ -334,9 +335,17 @@
     }
 
     .friends-art {
-      max-height: 300px;
+      width: 100%;
+      display: block;
+      margin: 14px 0;
+      border-radius: 24px;
+      max-height: 310px;
       object-fit: cover;
       object-position: top center;
+      background: rgba(0, 0, 0, 0.12);
+      box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 246, 184, 0.1);
     }
 
     .story-video {
@@ -355,17 +364,17 @@
     }
 
     .sound-grid button {
-      min-height: 62px;
+      min-height: 60px;
       margin: 0;
       padding: 10px;
-      font-size: 16px;
+      font-size: 15.5px;
       line-height: 1.15;
       white-space: normal;
       overflow-wrap: break-word;
     }
 
     .timer-title {
-      margin-top: 12px;
+      margin: 12px 0 0;
       color: #fff7bd;
       font-weight: 900;
       text-align: center;
@@ -376,8 +385,8 @@
     }
 
     #starNumber {
-      margin: 14px 0;
-      font-size: 44px;
+      margin: 12px 0;
+      font-size: 42px;
       font-weight: 950;
       text-align: center;
       color: #fff7bd;
@@ -408,20 +417,20 @@
 
     @media (max-width: 390px) {
       .app {
-        padding: 7px;
+        padding: 6px;
       }
 
       .screen {
-        padding: 12px;
-        border-radius: 26px;
+        padding: 11px;
+        border-radius: 25px;
       }
 
       .hero {
-        height: 215px;
+        height: 195px;
       }
 
       h1 {
-        font-size: 37px;
+        font-size: 35px;
       }
 
       .subtitle {
@@ -429,24 +438,28 @@
       }
 
       .main-cta {
-        min-height: 54px;
+        min-height: 52px;
       }
 
       .feature-card {
-        min-height: 88px;
+        min-height: 82px;
       }
 
       .feature-card img {
-        width: 46px;
-        height: 46px;
+        width: 42px;
+        height: 42px;
       }
 
       .feature-card strong {
-        font-size: 16px;
+        font-size: 15.5px;
       }
 
       .friends-preview img {
-        max-height: 130px;
+        height: 105px;
+      }
+
+      .friends-art {
+        max-height: 285px;
       }
     }
   </style>
@@ -497,8 +510,10 @@
           alt="Luna Fable and Twinkle"
           onerror="this.src='bedtime_friends.png'"
         />
+
         <h3>Meet Luna, Fable & Twinkle</h3>
         <p>Your magical bedtime friends for stories, breathing and calm sleep.</p>
+
         <button data-screen="friends">Meet Friends</button>
       </div>
 
@@ -750,12 +765,16 @@
         return;
       }
 
-      const routineState = JSON.parse(savedRoutine);
-      const boxes = document.querySelectorAll(".routine-check");
+      try {
+        const routineState = JSON.parse(savedRoutine);
+        const boxes = document.querySelectorAll(".routine-check");
 
-      boxes.forEach((box, index) => {
-        box.checked = routineState[index] || false;
-      });
+        boxes.forEach((box, index) => {
+          box.checked = routineState[index] || false;
+        });
+      } catch (error) {
+        localStorage.removeItem("moonNestRoutine");
+      }
     }
 
     function finishRoutine() {
