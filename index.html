@@ -17,7 +17,7 @@
     }
 
     html {
-      background: #08091f;
+      background: #070720;
     }
 
     body {
@@ -26,8 +26,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color: white;
       background:
-        radial-gradient(circle at top, rgba(255, 226, 150, 0.18), transparent 28%),
-        radial-gradient(circle at 80% 18%, rgba(181, 132, 255, 0.24), transparent 34%),
+        radial-gradient(circle at top, rgba(255, 226, 150, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 16%, rgba(181, 132, 255, 0.22), transparent 34%),
         linear-gradient(160deg, #060720, #17103b, #2b1759, #071f3a);
       overflow-x: hidden;
     }
@@ -45,10 +45,11 @@
       width: 100%;
       min-height: calc(100vh - 14px);
       padding: 12px;
+      padding-bottom: 28px;
       border-radius: 26px;
       background:
         radial-gradient(circle at top, rgba(255, 236, 180, 0.08), transparent 30%),
-        linear-gradient(180deg, rgba(81, 63, 148, 0.82), rgba(22, 20, 65, 0.96));
+        linear-gradient(180deg, rgba(79, 61, 146, 0.84), rgba(18, 17, 58, 0.97));
       border: 1px solid rgba(255, 255, 255, 0.2);
       overflow-x: hidden;
     }
@@ -63,7 +64,7 @@
 
     .hero {
       width: 100%;
-      height: 180px;
+      height: 170px;
       border-radius: 26px;
       overflow: hidden;
       background: rgba(255, 255, 255, 0.08);
@@ -74,24 +75,24 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      border-radius: 26px;
+      object-position: center 48%;
       display: block;
     }
 
     h1 {
-      margin: 9px 0 3px;
+      margin: 10px 0 3px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 35px;
+      font-size: 34px;
       color: #fff7d8;
       line-height: 1;
+      text-shadow: 0 0 16px rgba(255, 246, 205, 0.24);
     }
 
     h2 {
       margin: 0;
       flex: 1;
       text-align: center;
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 900;
     }
 
@@ -148,7 +149,7 @@
     }
 
     .feature-card {
-      min-height: 78px;
+      min-height: 76px;
       margin: 0;
       padding: 8px;
       color: #ffffff;
@@ -165,8 +166,8 @@
     }
 
     .feature-card img {
-      width: 39px;
-      height: 39px;
+      width: 38px;
+      height: 38px;
       object-fit: contain;
       border-radius: 12px;
     }
@@ -179,26 +180,29 @@
 
     .friends-preview {
       margin: 10px 0 0;
-      padding: 10px;
-      border-radius: 22px;
+      padding: 12px;
+      border-radius: 24px;
       background:
         linear-gradient(180deg, rgba(112, 79, 188, 0.72), rgba(38, 30, 95, 0.92));
       border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
-    .friends-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 17px;
-      margin-bottom: 7px;
-    }
-
     .friends-preview h3 {
       color: #fff7bd;
       font-size: 17px;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .friends-front-art {
+      width: 100%;
+      height: 128px;
+      border-radius: 18px;
+      margin-bottom: 8px;
+      background-image: url("friends_preview.png");
+      background-size: cover;
+      background-position: center 46%;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.16);
     }
 
     .friends-preview p {
@@ -244,23 +248,66 @@
       font-size: 22px;
     }
 
-    .routine-list {
-      margin: 18px 0;
+    .friends-banner {
+      width: 100%;
+      height: 185px;
+      border-radius: 24px;
+      margin: 8px 0 14px;
+      background-image: url("friends_preview.png");
+      background-size: cover;
+      background-position: center 45%;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.16);
     }
 
-    .routine-list label {
-      display: block;
-      margin: 9px 0;
+    .friend-card {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 14px;
+      align-items: center;
+      margin: 12px 0;
       padding: 14px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.15);
-      font-size: 16px;
-      font-weight: 800;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.13);
     }
 
-    input[type="checkbox"] {
-      transform: scale(1.25);
-      margin-right: 10px;
+    .friend-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background-image: url("friends_preview.png");
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.16);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+    }
+
+    .avatar-luna {
+      background-size: 305% auto;
+      background-position: 0% 58%;
+    }
+
+    .avatar-fable {
+      background-size: 305% auto;
+      background-position: 50% 58%;
+    }
+
+    .avatar-twinkle {
+      background-size: 305% auto;
+      background-position: 100% 58%;
+    }
+
+    .friend-card h3 {
+      color: #fff7bd;
+      font-size: 20px;
+      margin: 0 0 6px;
+    }
+
+    .friend-card p {
+      margin: 0;
+      color: #efe9ff;
+      font-size: 15px;
+      line-height: 1.35;
     }
 
     .card {
@@ -278,20 +325,23 @@
       line-height: 1.35;
     }
 
-    .friend-card h3 {
-      color: #fff7bd;
-      font-size: 20px;
+    .routine-list {
+      margin: 18px 0;
     }
 
-    .friends-art {
-      width: 100%;
-      height: auto;
+    .routine-list label {
       display: block;
-      margin: 10px 0 12px;
-      border-radius: 22px;
-      object-fit: contain;
-      object-position: center;
-      background: rgba(0, 0, 0, 0.12);
+      margin: 9px 0;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.25);
+      margin-right: 10px;
     }
 
     .story-cover {
@@ -356,25 +406,6 @@
       text-align: center;
       color: #fff7bd;
     }
-
-    @media (max-width: 390px) {
-      .hero {
-        height: 170px;
-      }
-
-      h1 {
-        font-size: 33px;
-      }
-
-      .feature-card {
-        min-height: 76px;
-      }
-
-      .feature-card img {
-        width: 38px;
-        height: 38px;
-      }
-    }
   </style>
 </head>
 
@@ -418,15 +449,9 @@
       </div>
 
       <div class="friends-preview">
-        <img
-          src="friends_preview.png"
-          alt="Luna Fable and Twinkle"
-          onerror="this.src='bedtime_friends.png'"
-        />
-
         <h3>Meet Luna, Fable & Twinkle</h3>
+        <div class="friends-front-art"></div>
         <p>Your magical bedtime friends for stories, breathing and calm sleep.</p>
-
         <button data-screen="friends">Meet Friends</button>
       </div>
 
@@ -542,26 +567,30 @@
         <h2>Bedtime Friends</h2>
       </header>
 
-      <img
-        class="friends-art"
-        src="friends_preview.png"
-        alt="Moon Nest bedtime friends"
-        onerror="this.src='bedtime_friends.png'"
-      />
+      <div class="friends-banner"></div>
 
-      <div class="card friend-card">
-        <h3>Luna</h3>
-        <p>The sleepy puppy who helps children feel safe and ready for bed.</p>
+      <div class="friend-card">
+        <div class="friend-avatar avatar-luna"></div>
+        <div>
+          <h3>Luna</h3>
+          <p>The sleepy puppy who helps children feel safe and ready for bed.</p>
+        </div>
       </div>
 
-      <div class="card friend-card">
-        <h3>Fable</h3>
-        <p>The gentle fox who brings soft bedtime stories and quiet imagination.</p>
+      <div class="friend-card">
+        <div class="friend-avatar avatar-fable"></div>
+        <div>
+          <h3>Fable</h3>
+          <p>The gentle fox who brings soft bedtime stories and quiet imagination.</p>
+        </div>
       </div>
 
-      <div class="card friend-card">
-        <h3>Twinkle</h3>
-        <p>The glowing butterfly who reminds children to breathe, relax and dream.</p>
+      <div class="friend-card">
+        <div class="friend-avatar avatar-twinkle"></div>
+        <div>
+          <h3>Twinkle</h3>
+          <p>The glowing butterfly who reminds children to breathe, relax and dream.</p>
+        </div>
       </div>
     </section>
 
